@@ -34,8 +34,9 @@ pipeline {
     stage('Unit Testing') { // Perform unit testing
       steps {
         script {
+            //   python3 -m unittest discover -s tests/unit       
           sh """
-          python3 -m unittest discover -s tests/unit
+            pytest
           """
         }
       }
