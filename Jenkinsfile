@@ -15,7 +15,7 @@ pipeline {
       steps {
         script {
           sh """
-          python -m venv .venv && 
+          python3 -m venv .venv && 
           source .venv/bin/activate && 
           pip install -r requirements.txt
           """
@@ -35,7 +35,7 @@ pipeline {
       steps {
         script {
           sh """
-          python -m unittest discover -s tests/unit
+          python3 -m unittest discover -s tests/unit
           """
         }
       }
