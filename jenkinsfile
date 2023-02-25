@@ -50,5 +50,5 @@ pipeline {
         
         // slackSend message: msg, channel: env.SLACK_CHANNEL
     }
-  }
+  }    
 }
