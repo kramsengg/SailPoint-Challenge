@@ -28,7 +28,8 @@ pipeline {
         script {
             //   python3 -m unittest discover -s tests/unit       
           sh """
-            python3 -m unittest discover -s tests/unit
+            . .venv/bin/activate && 
+            pytest
           """
         }
       }
