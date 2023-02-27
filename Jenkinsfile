@@ -28,7 +28,7 @@ pipeline {
         script {
             //   python3 -m unittest discover -s tests/unit       
           sh """
-            pytest
+            python3 -m unittest discover -s tests/unit
           """
         }
       }
