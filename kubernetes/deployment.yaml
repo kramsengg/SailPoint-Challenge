@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: sp-challenge-app
-        image: amarchandran/sp-challenge-flask:1.0.0-draft
+        image: amarchandran/sp-challenge:1.0.0-latest
         resources:
           limits:
             memory: "128Mi"

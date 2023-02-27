@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Pull Request Statistics</title>
+</head>
+ 
+<body>
+    <h3>{{fromMail}}</h3>
+    <h3>{{toMail}}</h3>
+    <h3>Subject: {{subject}} </h3>
+    <h3> Hi,<br/><br/>Here's the summary of pull requests for the past week:<br/><br/>Opened: {{opened}}  
+        
+        <ul>
+            {% for title in open_titles %}
+            <li>{{ title }}</li>
+            {% endfor %}
+        </ul>
+        
+        <br/>
+        Closed: {{closed}}  
+        <ul>
+            {% for title in closed_titles %}
+            <li>{{ title }}</li>
+            {% endfor %}
+        </ul>
+        <br/>
+        In progress: {{in_progress}} 
+        <ul>
+            {% for title in in_progress_titles %}
+            <li>{{ title }}</li>
+            {% endfor %}
+        </ul>
+        <br/><br/>
+        Best regards,<br/>Ramachandran<br/> DevOps Engineer - Support  </h3>
+</body>
+ 
+</html>

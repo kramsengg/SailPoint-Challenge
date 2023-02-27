@@ -22,15 +22,7 @@ pipeline {
         }
       }
     }
-    // stage('Linting') { // Run pylint against your code
-    //   steps {
-    //     script {
-    //       sh """
-    //       pylint **/*.py
-    //       """
-    //     }
-    //   }
-    // }
+  
     stage('Unit Testing') { // Perform unit testing
       steps {
         script {
@@ -42,26 +34,26 @@ pipeline {
       }
     }
 
-    stage('Build image for deployment') { 
-      agent any
-      steps {
-        script {
-          sh 'docker build -t amarchandran/sp-challenge:latest .'
-          sh 'docker build -t amarchandran/sp-challenge-flask:1.0.0-draft -f Dockerfile.flask .'
-        }
-      }
-    }
+    // stage('Build image for deployment') { 
+    //   agent any
+    //   steps {
+    //     script {
+    //       sh 'docker build -t amarchandran/sp-challenge:latest .'
+    //       sh 'docker build -t amarchandran/sp-challenge-flask:1.0.0-draft -f Dockerfile.flask .'
+    //     }
+    //   }
+    // }
 
 
-    stage('Push image for deployment') { 
-      agent any
-      steps {
-        script {
-          sh 'docker push amarchandran/sp-challenge:latest '
-          sh 'docker push amarchandran/sp-challenge-flask:1.0.0-latest'
-        }
-      }
-    }
+    // stage('Push image for deployment') { 
+    //   agent any
+    //   steps {
+    //     script {
+    //       sh 'docker push amarchandran/sp-challenge:latest '
+    //       sh 'docker push amarchandran/sp-challenge-flask:1.0.0-latest'
+    //     }
+    //   }
+    // }
     
   }  
   post {
