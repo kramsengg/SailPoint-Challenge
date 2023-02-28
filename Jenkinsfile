@@ -42,22 +42,24 @@ pipeline {
          script {
            sh """
            docker build -t amarchandran/sp-challenge:2.0.0-latest . && 
-           docker build -t amarchandran/sp-challenge-flask:2.0.0-latest -f Dockerfile.console .
+           docker build -t amarchandran/sp-challenge-console:2.0.0-latest -f Dockerfile.console .
            """
          }
        }
      }
 
 
-    // stage('Push image for deployment') { 
-    //   agent any
-    //   steps {
-    //     script {
-    //       sh 'docker push amarchandran/sp-challenge:2.0.0-latest '
-    //       sh 'docker push amarchandran/sp-challenge-flask:2.0.0-latest'
-    //     }
-    //   }
-    // }
+     stage('Push image for deployment') { 
+       agent any
+       steps {
+         script {
+           sh """ 
+           docker push amarchandran/sp-challenge:2.0.0-latest &&
+           docker push amarchandran/sp-challenge-console:2.0.0-latest
+           """
+         }
+       }
+     }
     
   }  
   post {
