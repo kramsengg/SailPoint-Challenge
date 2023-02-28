@@ -67,7 +67,7 @@ pipeline {
        agent any
        steps {
            sh """ 
-              kubectl apply -f ./kubernetes/ --context docker-desktop
+              kubectl apply -f ./kubernetes/ --context docker-desktop --user docker-desktop
            """     
        }
      }
