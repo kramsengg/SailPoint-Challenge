@@ -53,7 +53,7 @@ pipeline {
        agent any
        steps {
           // This step should not normally be used in your script. Consult the inline help for details.
-          withDockerRegistry(credentialsId: 'dockerhub-creds') {
+          withDockerRegistry(credentialsId: 'dockerhub-creds', url: 'https://hub.docker.com/') {
             // some block
             script {
               sh """ 
