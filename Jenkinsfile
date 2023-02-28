@@ -52,12 +52,16 @@ pipeline {
      stage('Push image for deployment') { 
        agent any
        steps {
-         script {
-           sh """ 
-           docker push amarchandran/sp-challenge:2.0.0-latest &&
-           docker push amarchandran/sp-challenge-console:2.0.0-latest
-           """
-         }
+          // This step should not normally be used in your script. Consult the inline help for details.
+          withDockerRegistry(credentialsId: 'dockerhub-creds') {
+            // some block
+            script {
+              sh """ 
+                docker push amarchandran/sp-challenge:2.0.0-latest &&
+                docker push amarchandran/sp-challenge-console:2.0.0-latest
+               """
+            }
+          }         
        }
      }
     
