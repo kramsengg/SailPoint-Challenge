@@ -67,7 +67,7 @@ pipeline {
        agent any
        steps {
            sh """ 
-              kubtctl apply -f ./kubernetes/
+              kubectl apply -f ./kubernetes/
            """     
        }
      }
