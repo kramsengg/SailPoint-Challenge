@@ -52,12 +52,13 @@ pipeline {
      stage('Push image for deployment') { 
        agent any
        steps {
-            script {
-              sh """ 
+         withCredentials([string(credentialsId: 'dockerhub-token', variable: 'dh_token')]) {
+           sh "docker login -u amarchandran -p ${dh_token}" 
+           sh """ 
                 docker push amarchandran/sp-challenge:2.0.0-latest &&
                 docker push amarchandran/sp-challenge-console:2.0.0-latest
-               """
-            }        
+           """
+         }        
        }
      }
     
