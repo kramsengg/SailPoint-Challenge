@@ -61,6 +61,19 @@ pipeline {
          }        
        }
      }
+
+
+     stage('QA Deployment') { 
+       agent any
+       steps {
+           sh """ 
+              kubtctl apply -f ./kubernetes/
+           """     
+       }
+     }
+
+
+
     
   }  
   post {
