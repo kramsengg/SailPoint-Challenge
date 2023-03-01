@@ -66,9 +66,10 @@ pipeline {
      stage('QA Deployment') { 
        agent any
        steps {
+         // kubectl apply -f ./kubernetes/ --context docker-desktop --user docker-desktop
            sh """ 
-              kubectl apply -f ./kubernetes/ --context docker-desktop --user docker-desktop
-           """     
+              kubectl config view
+            """     
        }
      }
 
