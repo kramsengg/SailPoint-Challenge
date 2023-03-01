@@ -23,7 +23,6 @@ pipeline {
         }
       }
     }
-  
     stage('Unit Testing') { // Perform unit testing
       steps {
         script {
@@ -35,7 +34,6 @@ pipeline {
         }
       }
     }
-
     stage('Build image for deployment') { 
        agent any
        steps {
@@ -47,8 +45,6 @@ pipeline {
          }
        }
      }
-
-
      stage('Push image for deployment') { 
        agent any
        steps {
@@ -61,8 +57,6 @@ pipeline {
          }        
        }
      }
-
-
      stage('QA Deployment') { 
        agent any
        steps {
@@ -70,11 +64,7 @@ pipeline {
               kubectl apply -f ./kubernetes/ --context docker-desktop --user docker-desktop
             """     
        }
-     }
-
-
-
-    
+     }  
   }  
   post {
     failure {
