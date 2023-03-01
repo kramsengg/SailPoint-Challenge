@@ -4,14 +4,28 @@ Create a .env file in your cloned repository.
 And update the values as required
 
 # # .env
+> GH_SP_PAT_TOKEN= GitHub Personal Accesss Token PAT_TOKEN.
+>
+> REPOSITORY_NAME=Repository Name Eg:kramsengg/sampleproject.
+>
+> FROM_EMAIL= From Email ID.
+>
+> TO_EMAIL= To Email ID.
 
-GH_SP_PAT_TOKEN= GitHub Personal Accesss Token PAT_TOKEN.
+# Dockerfile
+> This Dockerfile used to create the build docker image of this application with needed dependency of OS/Platform and application dependencies.
 
-REPOSITORY_NAME=Repository Name Eg:kramsengg/sampleproject.
+# Jenkinsfile
+> This scripts performs the CI/CD pipelines which involves following steps to do smooth deployment
 
-FROM_EMAIL= From Email ID.
+# Kubernetes - Directory
 
-TO_EMAIL= To Email ID.
+This folder contains the deployment.yaml and servics.yaml which will do deployment of this app in kubernetes cluster.
+> 1. Setup
+> 2. Unit Test
+> 3. Build Docker Image
+> 4. Push Docker Image 
+> 5. QA Deployment in Kubernetes
 
 # CI/CD Pipelines
 
