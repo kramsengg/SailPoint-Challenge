@@ -1,4 +1,4 @@
-# SailPoint-Challenge
+# SailPoint-Challenge: Pull Request Statistics
 
 Create a .env file in your cloned repository.
 And update the values as required
