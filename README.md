@@ -15,7 +15,7 @@ TO_EMAIL= To Email ID.
 
 # CI/CD Pipelines
 
-![image](https://user-images.githubusercontent.com/57127778/221377860-79324733-dead-4200-9c4c-f24f5d4e6e7d.png)
+![image](https://user-images.githubusercontent.com/57127778/222111811-fed3da54-eaf5-4cfe-bfe3-867a6c4f2478.png)
 
 # Python Web Application - PR Statistics
 
