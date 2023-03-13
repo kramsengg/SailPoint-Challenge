@@ -1,3 +1,4 @@
+@Library('mylibrary')_
 pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '10')) // Retain history on the last 10 builds
@@ -9,6 +10,8 @@ pipeline {
     stage('Checkout') { // Checkout (git clone ...) the projects repository
       steps {
         checkout scm
+        echo 'Hello world'
+        sayHello 'Alex'
       }
     }
     stage('Setup') { // Install any dependencies you need to perform testing
