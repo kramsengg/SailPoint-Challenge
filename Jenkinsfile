@@ -12,6 +12,7 @@ pipeline {
         checkout scm
         echo 'Hello world'
         sayHello 'Alex'
+        btBuild(['event-sink-serv'], revision: env.GIT_COMMIT, push: true)
       }
     }
     stage('Setup') { // Install any dependencies you need to perform testing
