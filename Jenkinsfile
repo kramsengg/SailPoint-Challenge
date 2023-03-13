@@ -17,7 +17,7 @@ pipeline {
     stage('btBuild Check') {
       steps {
         echo env.GIT_COMMIT 
-        //btBuild(['SailPoint-Challenge'], revision: env.GIT_COMMSailPoint-Challenge)
+        btBuild(['SailPoint-Challenge'], revision: env.GIT_COMMIT, push: true)
       }
     }
     stage('Setup') { // Install any dependencies you need to perform testing
